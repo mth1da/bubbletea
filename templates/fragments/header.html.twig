@@ -1,0 +1,45 @@
+
+<header>
+    <nav class="navbar py-5 navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid collapse navbar-collapse">
+            <a class="navbar-brand" href="{{ path('app_homepage') }}">Bubble Tea</a>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href=#>Someting</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=#>Some other thing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=#>Again</a>
+                    </li>
+                </ul>
+
+                <!-- Button -->
+                <ul class="nav-bar nav ms-auto mb-2 mb-lg-0">
+
+                    {# si l'user est connecté #}
+                    {% if app.user %}
+                        <li class="nav-item">
+                            <button type="button" class="navbar-btn btn me-lg-5 ms-auto btn-outline-secondary" data-bs-placement="bottom" onclick="location.href='#'">Profil</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="navbar-btn btn me-lg-5 ms-auto btn-outline-secondary" data-bs-placement="bottom" onclick="location.href='#'">Panier</button>
+                        </li>
+
+                        {# si l'user n'est pas connecté #}
+                    {% else %}
+                        <li class="nav-item">
+                            <button type="button" class="navbar-btn btn ms-auto btn-outline-secondary" data-bs-placement="bottom" onclick="location.href='#'">Connexion</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="navbar-btn btn me-lg-5 ms-auto btn-outline-secondary" data-bs-placement="bottom" onclick="location.href='#'">Inscription</button>
+                        </li>
+                    {% endif %}
+
+            </div>
+        </div>
+    </nav>
+</header>
