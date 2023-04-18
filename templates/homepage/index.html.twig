@@ -4,6 +4,10 @@
 
 {% block body %}
 <div class="container">
-    Bienvenue
+    <h1>Bienvenue</h1>
+    {% if app.user %}
+        <button type="button" class="btn ms-auto btn-secondary" onclick="location.href='#'">Commander</button>
+    {% endif %}
+
 </div>
 {% endblock %}

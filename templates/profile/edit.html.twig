@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification du profil de {{ app.user.getFirstName() }}{% endblock %}
+
+
+{% block body %}
+
+    <section class="container-form">
+        <h2>Modification du profil de {{ app.user.getFirstName() }} </h2>
+        <div class="row">
+            <div class="col">
+                {{ form_start(editForm) }}
+
+                    {{ form_row(editForm.first_name) }}
+                    {{ form_row(editForm.last_name) }}
+                    {{ form_row(editForm.email) }}
+                    {{ form_row(editForm.password) }}
+
+                    <button type="submit" class="btn btn-primary my-3">Sauvegarder</button>
+                    <button type="reset" class="btn btn-primary my-3">Effacer</button>
+                {{ form_end(editForm) }}
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

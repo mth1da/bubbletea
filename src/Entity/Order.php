@@ -26,7 +26,7 @@ class Order
     #[ORM\JoinColumn(nullable: false, onDelete: "CASCADE")] // si on delete un user => delete tous ses orders
     private ?user $order_user = null;
 
-    #[ORM\ManyToMany(targetEntity: drink::class)]
+    #[ORM\ManyToMany(targetEntity: Drink::class)]
     private Collection $order_drink;
 
     public function __construct()
@@ -63,12 +63,12 @@ class Order
         return $this;
     }
 
-    public function getOrderUser(): ?user
+    public function getOrderUser(): ?User
     {
         return $this->order_user;
     }
 
-    public function setOrderUser(?user $order_user): self
+    public function setOrderUser(?User $order_user): self
     {
         $this->order_user = $order_user;
 
@@ -83,7 +83,7 @@ class Order
         return $this->order_drink;
     }
 
-    public function addOrderDrink(drink $orderDrink): self
+    public function addOrderDrink(Drink $orderDrink): self
     {
         if (!$this->order_drink->contains($orderDrink)) {
             $this->order_drink->add($orderDrink);
@@ -92,7 +92,7 @@ class Order
         return $this;
     }
 
-    public function removeOrderDrink(drink $orderDrink): self
+    public function removeOrderDrink(Drink $orderDrink): self
     {
         $this->order_drink->removeElement($orderDrink);
 

@@ -1,7 +1,8 @@
 
 <header>
-    <nav class="navbar py-5 navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar py-3 navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid collapse navbar-collapse">
+            <img src="{{ asset('images/logo.png')}}" class="logo-img" alt="logo bubble tea">
             <a class="navbar-brand" href="{{ path('app_homepage') }}">Bubble Tea</a>
 
             <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -23,19 +24,22 @@
                     {# si l'user est connecté #}
                     {% if app.user %}
                         <li class="nav-item">
-                            <button type="button" class="navbar-btn btn me-lg-5 ms-auto btn-outline-secondary" data-bs-placement="bottom" onclick="location.href='#'">Profil</button>
+                            <button type="button" class="navbar-btn btn me-lg-1 ms-auto btn-outline-secondary" data-bs-placement="bottom" onclick="location.href='{{ path('app_profile')}}'">Mon Profil</button>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="navbar-btn btn me-lg-5 ms-auto btn-outline-secondary" data-bs-placement="bottom" onclick="location.href='#'">Panier</button>
+                            <button type="button" class="navbar-btn btn me-lg-1 ms-auto btn-outline-secondary" data-bs-placement="bottom" onclick="location.href='#'">Mon Panier</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="navbar-btn btn me-lg-5 ms-auto btn-outline-secondary" data-bs-placement="bottom" onclick="location.href='{{ path('app_logout')}}'">Déconnexion</button>
                         </li>
 
-                        {# si l'user n'est pas connecté #}
+                    {# si l'user n'est pas connecté #}
                     {% else %}
                         <li class="nav-item">
-                            <button type="button" class="navbar-btn btn ms-auto btn-outline-secondary" data-bs-placement="bottom" onclick="location.href='#'">Connexion</button>
+                            <button type="button" class="navbar-btn btn me-lg-1 ms-auto btn-outline-secondary" data-bs-placement="bottom" onclick="location.href='{{ path('app_login') }}'">Connexion</button>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="navbar-btn btn me-lg-5 ms-auto btn-outline-secondary" data-bs-placement="bottom" onclick="location.href='#'">Inscription</button>
+                            <button type="button" class="navbar-btn btn me-lg-5 ms-auto btn-outline-secondary" data-bs-placement="bottom" onclick="location.href='{{ path('app_register') }}'">Inscription</button>
                         </li>
                     {% endif %}
 
