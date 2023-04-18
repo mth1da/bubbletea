@@ -24,7 +24,7 @@ class Drink
     #[ORM\Column]
     private ?int $price = null;
 
-    #[ORM\ManyToMany(targetEntity: popping::class)]
+    #[ORM\ManyToMany(targetEntity: Popping::class)]
     private Collection $drink_popping;
 
     public function __construct()
@@ -81,7 +81,7 @@ class Drink
         return $this->drink_popping;
     }
 
-    public function addDrinkPopping(popping $drinkPopping): self
+    public function addDrinkPopping(Popping $drinkPopping): self
     {
         if (!$this->drink_popping->contains($drinkPopping)) {
             $this->drink_popping->add($drinkPopping);
@@ -90,7 +90,7 @@ class Drink
         return $this;
     }
 
-    public function removeDrinkPopping(popping $drinkPopping): self
+    public function removeDrinkPopping(Popping $drinkPopping): self
     {
         $this->drink_popping->removeElement($drinkPopping);
 

@@ -1,0 +1,15 @@
+/*login & sign up*/
+.container-form {
+    width: 50%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.logo-img{
+    height:100px;
+    width:auto;
+}
