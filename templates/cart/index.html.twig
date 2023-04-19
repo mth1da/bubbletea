@@ -69,6 +69,7 @@
                 <button type="button" class="btn btn-cart btn-primary" onclick="location.href='{{ path('app_cart_validate') }}'">Valider</button>
                 {% else %}
                     <p>Panier vide</p>
+                    <button type="button" class="btn ms-auto btn-secondary mb-5 mt-4" onclick="location.href='{{ path('app_drinks') }}'">Commander</button>
                 {% endif %}
             {% else %}
                 Connectez-vous
