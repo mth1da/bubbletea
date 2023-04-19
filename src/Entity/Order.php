@@ -31,6 +31,7 @@ class Order
 
     public function __construct()
     {
+        $this->created_at = new \DatetimeImmutable(); //date du jour automatiquement
         $this->order_drink = new ArrayCollection();
     }
 
@@ -98,4 +99,5 @@ class Order
 
         return $this;
     }
+
 }

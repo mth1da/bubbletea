@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La Carte{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+
+        <h1>La Carte</h1>
+
+        {% for drink in drinks %}
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ drink.getName }}</h5>
+                        <p>{{ drink.getFlavour }}</p>
+                        <p>{{ drink.getPrice }}€</p>
+                        {% if app.user %}
+                            <p>
+                                <button type="button" class="btn btn-secondary" onclick="location.href='{{ path('app_drinks_add', {'id' : drink.id}) }}'">Ajouter au panier</button>
+                            </p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+{% endblock %}

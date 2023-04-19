@@ -24,8 +24,8 @@ class ProfileController extends AbstractController
         //on traite la requête du form
         $editForm->handleRequest($request);
 
-        //on vérifie que le formulaire est soumis & valide
-        if($editForm->isSubmitted() && $editForm->isValid()){
+        //on vérifie que le formulaire est soumis
+        if($editForm->isSubmitted()){
             //on encode le password
             $user->setPassword(
                 $userPasswordHasher->hashPassword(

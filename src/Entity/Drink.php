@@ -24,8 +24,14 @@ class Drink
     #[ORM\Column]
     private ?int $price = null;
 
+    #[ORM\Column]
+    private ?bool $is_on_menu = null;
+
     #[ORM\ManyToMany(targetEntity: Popping::class)]
     private Collection $drink_popping;
+
+    #[ORM\Column]
+    private ?int $sugar_quantity = null;
 
     public function __construct()
     {
@@ -73,6 +79,18 @@ class Drink
         return $this;
     }
 
+    public function isIsOnMenu(): ?bool
+    {
+        return $this->is_on_menu;
+    }
+
+    public function setIsOnMenu(bool $is_on_menu): self
+    {
+        $this->is_on_menu = $is_on_menu;
+
+        return $this;
+    }
+
     /**
      * @return Collection<int, popping>
      */
@@ -83,9 +101,7 @@ class Drink
 
     public function addDrinkPopping(Popping $drinkPopping): self
     {
-        if (!$this->drink_popping->contains($drinkPopping)) {
-            $this->drink_popping->add($drinkPopping);
-        }
+        $this->drink_popping->add($drinkPopping);
 
         return $this;
     }
@@ -96,4 +112,17 @@ class Drink
 
         return $this;
     }
+
+    public function getSugarQuantity(): ?int
+    {
+        return $this->sugar_quantity;
+    }
+
+    public function setSugarQuantity(int $sugar_quantity): self
+    {
+        $this->sugar_quantity = $sugar_quantity;
+
+        return $this;
+    }
+
 }

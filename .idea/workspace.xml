@@ -4,18 +4,69 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae840bf6-33fe-4cd8-837d-0c879c515619" name="Changes" comment="" />
+    <list default="true" id="ae840bf6-33fe-4cd8-837d-0c879c515619" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/.env.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/bin/console" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/bin/phpunit" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/bundles.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/packages/cache.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/packages/debug.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/packages/doctrine.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/packages/doctrine_migrations.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/packages/framework.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/packages/mailer.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/packages/messenger.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/packages/monolog.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/packages/notifier.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/packages/routing.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/packages/security.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/packages/sensio_framework_extra.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/packages/translation.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/packages/twig.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/packages/validator.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/packages/web_profiler.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/preload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/routes.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/routes/framework.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/routes/web_profiler.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/config/services.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/docker-compose.override.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/migrations/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/phpunit.xml.dist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/public/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/src/Controller/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/src/Entity/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/src/Kernel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/src/Repository/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/symfony.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/templates/base.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/tests/bootstrap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubbletea/translations/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomepageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomepageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/drinks/show.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/fragments/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fragments/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/homepage/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homepage/index.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -146,6 +197,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="2Ob6ccokCm8ZtJXY9g56nCwxSXk" />
@@ -153,20 +206,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/laragon/www/bubbletea",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/laragon/www/bubbletea&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -183,6 +236,7 @@
       <updated>1681817014544</updated>
       <workItem from="1681817015783" duration="1317000" />
       <workItem from="1681819602624" duration="447000" />
+      <workItem from="1681896013171" duration="35816000" />
     </task>
     <servers />
   </component>
