@@ -13,3 +13,22 @@
     height:100px;
     width:auto;
 }
+
+.card{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+}
+
+.btn-cart{
+    float:right;
+}
+
+/*listes*/
+ul{
+    list-style-type: none;
+}
+
+.li-pop{
+    margin-bottom: 15px;
+}

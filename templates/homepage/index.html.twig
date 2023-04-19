@@ -6,7 +6,7 @@
 <div class="container">
     <h1>Bienvenue</h1>
     {% if app.user %}
-        <button type="button" class="btn ms-auto btn-secondary" onclick="location.href='#'">Commander</button>
+        <button type="button" class="btn ms-auto btn-secondary" onclick="location.href='{{ path('app_drinks') }}'">Commander</button>
     {% endif %}
 
 </div>
