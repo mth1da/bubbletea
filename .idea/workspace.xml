@@ -48,8 +48,14 @@
       <change beforePath="$PROJECT_DIR$/bubbletea/templates/base.html.twig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bubbletea/tests/bootstrap.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bubbletea/translations/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomepageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomepageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/drinks/show.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DrinkController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DrinkController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/DrinkFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/DrinkFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Drink.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Drink.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cart/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/drinks/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/drinks/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/fragments/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fragments/header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/homepage/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homepage/index.html.twig" afterDir="false" />
     </list>

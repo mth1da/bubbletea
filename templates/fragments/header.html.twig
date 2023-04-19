@@ -27,6 +27,13 @@
 
                     {# si l'user est connecté #}
                     {% if app.user %}
+                        {# si l'user est un admin #}
+                        {% if 'ROLE_ADMIN' in app.user.getroles() %}
+                            <li class="nav-item">
+                                <button type="button" class="navbar-btn btn me-lg-1 ms-auto btn-outline-secondary" data-bs-placement="bottom" onclick="location.href='{{ path('app_admin')}}'">Gérer la Carte</button>
+                            </li>
+                        {% endif %}
+
                         <li class="nav-item">
                             <button type="button" class="navbar-btn btn me-lg-1 ms-auto btn-outline-secondary" data-bs-placement="bottom" onclick="location.href='{{ path('app_profile')}}'">Mon Profil</button>
                         </li>

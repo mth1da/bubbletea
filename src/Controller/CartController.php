@@ -172,6 +172,7 @@ class CartController extends AbstractController
                 $drink->setPrice($session->get('drinks')[$key]['drink']->getPrice());
                 $drink->setSugarQuantity($session->get('drinks')[$key]['drink']->getSugarQuantity());
                 $drink->setIsOnMenu(False);
+                $drink->setIsPartOfMenu(False);
 
                 //on ajoute les poppings à la boisson
                 foreach($bubbletea['poppings'] as $popping){

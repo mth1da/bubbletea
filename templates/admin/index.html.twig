@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gérer La Carte{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+
+            <h1>Gérer La Carte</h1>
+
+            {# si l'user est un admin #}
+            {% if 'ROLE_ADMIN' in app.user.getroles() %}
+                {% for drink in drinks %}
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ drink.getName }}</h5>
+                                <p>{{ drink.getFlavour }}</p>
+                                <p>{{ drink.getPrice }}€</p>
+                                {% if drink.isOnMenu %}
+                                    <button type="button" class="btn btn-outline-danger mb-2 mt-4" onclick="location.href='{{ path('app_admin_hide', {'id' : drink.id}) }}'">Supprimer de la Carte</button>
+                                {% else %}
+                                    <button type="button" class="btn btn-outline-success mb-2 mt-4" onclick="location.href='{{ path('app_admin_show', {'id' : drink.id}) }}'">Ajouter à la Carte</button>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+

@@ -33,6 +33,9 @@ class Drink
     #[ORM\Column]
     private ?int $sugar_quantity = null;
 
+    #[ORM\Column]
+    private ?bool $is_part_of_menu = null;
+
     public function __construct()
     {
         $this->drink_popping = new ArrayCollection();
@@ -121,6 +124,18 @@ class Drink
     public function setSugarQuantity(int $sugar_quantity): self
     {
         $this->sugar_quantity = $sugar_quantity;
+
+        return $this;
+    }
+
+    public function isIsPartOfMenu(): ?bool
+    {
+        return $this->is_part_of_menu;
+    }
+
+    public function setIsPartOfMenu(bool $is_part_of_menu): self
+    {
+        $this->is_part_of_menu = $is_part_of_menu;
 
         return $this;
     }
