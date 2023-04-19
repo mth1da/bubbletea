@@ -62,10 +62,12 @@
                                 <p>{{ bubbletea['drink'].getPrice }}€</p>
                             </div>
                         </div>
-
+                    <br><br>
                     {% endfor %}
-                Total : {{ total }}€
-                <button type="button" class="btn btn-cart btn-primary" onclick="location.href='{{ path('app_cart_validate') }}'">Valider</button>
+                   <p> Total : {{ total }}€
+                        <button type="button" class="btn me-2 ml-5 btn-secondary" onclick="location.href='{{ path('app_drinks') }}'">Continuer ma Commande</button>
+                        <button type="button" class="btn me-2 btn-primary" onclick="location.href='{{ path('app_cart_validate') }}'">Valider</button>
+                   </p>
                 {% else %}
                     <p>Panier vide</p>
                     <button type="button" class="btn ms-auto btn-secondary mb-5 mt-4" onclick="location.href='{{ path('app_drinks') }}'">Commander</button>
