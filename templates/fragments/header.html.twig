@@ -2,8 +2,12 @@
 <header>
     <nav class="navbar py-3 navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid collapse navbar-collapse">
-            <img src="{{ asset('images/logo.png')}}" class="logo-img" alt="logo bubble tea">
-            <a class="navbar-brand" href="{{ path('app_homepage') }}">Bubble Tea</a>
+            <a href="{{ path('app_homepage') }}">
+                <img src="{{ asset('images/logo.png')}}" class="logo-img" alt="logo bubble tea">
+            </a>
+            <a class="navbar-brand" href="{{ path('app_homepage') }}">
+                Bubble Tea
+            </a>
 
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
@@ -42,6 +46,7 @@
                             <button type="button" class="navbar-btn btn me-lg-5 ms-auto btn-outline-secondary" data-bs-placement="bottom" onclick="location.href='{{ path('app_register') }}'">Inscription</button>
                         </li>
                     {% endif %}
+                </ul>
 
             </div>
         </div>
