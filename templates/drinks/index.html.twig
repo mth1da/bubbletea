@@ -25,4 +25,9 @@
             </div>
 
         {% endfor %}
+    </div>
+    {% if app.user %}
+        <button type="button" class="btn me-lg-1 mt-4 btn-secondary" data-bs-placement="bottom" onclick="location.href='{{ path('app_cart') }}'">Voir mon Panier</button>
+    {% endif %}
+</div>
 {% endblock %}

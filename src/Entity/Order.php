@@ -24,7 +24,7 @@ class Order
 
     #[ORM\ManyToOne(inversedBy: 'orders')]
     #[ORM\JoinColumn(nullable: false, onDelete: "CASCADE")] // si on delete un user => delete tous ses orders
-    private ?user $order_user = null;
+    private ?User $order_user = null;
 
     #[ORM\ManyToMany(targetEntity: Drink::class)]
     private Collection $order_drink;

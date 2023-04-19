@@ -2,9 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Drink;
 use App\Repository\DrinkRepository;
-use App\Repository\PoppingRepository;
 use PHPUnit\Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,7 +16,6 @@ class DrinkController extends AbstractController
     public function index(DrinkRepository $drinkRepository, Request $request): Response
     {
         $session = $request->getSession();
-        /*$session->set('order', []);*/
         return $this->render('drinks/index.html.twig', [
             'drinks' => $drinkRepository->findBy(['is_on_menu' => true]),
         ]);

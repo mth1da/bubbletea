@@ -17,6 +17,7 @@ class DrinkFixtures extends Fixture implements DependentFixtureInterface
         $jasmin->setPrice(5);
         $jasmin->setSugarQuantity(1);
         $jasmin->setIsOnMenu(True);
+        $jasmin->setIsPartOfMenu(True);
         $jasmin->addDrinkPopping($this->getReference("tapioca"));
         $manager->persist($jasmin);
 
@@ -26,6 +27,7 @@ class DrinkFixtures extends Fixture implements DependentFixtureInterface
         $fraise->setPrice(5);
         $fraise->setSugarQuantity(1);
         $fraise->setIsOnMenu(True);
+        $fraise->setIsPartOfMenu(True);
         $fraise->addDrinkPopping($this->getReference("tapioca"));
         $manager->persist($fraise);
 
@@ -35,6 +37,7 @@ class DrinkFixtures extends Fixture implements DependentFixtureInterface
         $rose->setPrice(5);
         $rose->setSugarQuantity(1);
         $rose->setIsOnMenu(True);
+        $rose->setIsPartOfMenu(True);
         $rose->addDrinkPopping($this->getReference("tapioca"));
         $manager->persist($rose);
 
@@ -44,6 +47,7 @@ class DrinkFixtures extends Fixture implements DependentFixtureInterface
         $litchi->setPrice(5);
         $litchi->setSugarQuantity(1);
         $litchi->setIsOnMenu(True);
+        $litchi->setIsPartOfMenu(True);
         $litchi->addDrinkPopping($this->getReference("tapioca"));
         $manager->persist($litchi);
 
@@ -53,6 +57,7 @@ class DrinkFixtures extends Fixture implements DependentFixtureInterface
         $mangue->setPrice(5);
         $mangue->setSugarQuantity(1);
         $mangue->setIsOnMenu(True);
+        $mangue->setIsPartOfMenu(True);
         $mangue->addDrinkPopping($this->getReference("tapioca"));
         $manager->persist($mangue);
 
@@ -62,6 +67,7 @@ class DrinkFixtures extends Fixture implements DependentFixtureInterface
         $peche->setPrice(5);
         $peche->setSugarQuantity(1);
         $peche->setIsOnMenu(True);
+        $peche->setIsPartOfMenu(True);
         $peche->addDrinkPopping($this->getReference("tapioca"));
         $manager->persist($peche);
 
@@ -71,6 +77,7 @@ class DrinkFixtures extends Fixture implements DependentFixtureInterface
         $pasteque->setPrice(5);
         $pasteque->setSugarQuantity(1);
         $pasteque->setIsOnMenu(False);
+        $pasteque->setIsPartOfMenu(True);
         $pasteque->addDrinkPopping($this->getReference("tapioca"));
         $manager->persist($pasteque);
 
