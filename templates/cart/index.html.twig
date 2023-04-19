@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+            <h1>Panier</h1>
+
+            {% if app.user %}
+                {% if cart %}
+                    {% for key, bubbletea in cart %}
+                        <div class="card w-50">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ bubbletea['drink'].getName }} saveur {{ bubbletea['drink'].getFlavour }}</h5>
+                                <p>Sucre : {{ bubbletea['drink'].getSugarQuantity }}
+                                    <button type="button" class="btn btn-cart btn-success me-3" onclick="location.href='{{ path('app_cart_add_sugar', {'key' : key}) }}'">+</button>
+                                    <button type="button" class="btn btn-cart btn-danger me-3" onclick="location.href='{{ path('app_cart_discard_sugar', {'key' : key}) }}'"> - </button>
+                                </p>
+                                <p>Popping
+                                <ul>
+                                    {% for keyPop, popping in bubbletea['poppings'] %}
+                                        <li class="li-pop">
+                                            {{ popping.getName }}
+                                            <button type="button" class="btn btn-cart btn-outline-secondary" onclick="location.href='{{ path('app_cart_discard_popping', {'key' : key, 'id' : popping.getId}) }}'">Retirer</button>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                                </p>
+                                <div class="accordion" id="accordion">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-heading">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse" aria-expanded="false" aria-controls="flush-collapse">
+                                                Modifier les popping
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapse" class="accordion-collapse collapse" aria-labelledby="flush-heading" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    {% for pop in poppings %}
+                                                        {% set found = false %}
+                                                        {% for topping in bubbletea['poppings'] %}
+                                                            {% if pop.getName == topping.getName %}
+                                                                {% set found = true %}
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                        {% if not found %}
+                                                            <li class="li-pop">
+                                                                {{ pop.getName }}
+                                                                <button type="button" class="btn btn-cart btn-outline-secondary" onclick="location.href='{{ path('app_cart_add_popping', {'key' : key, 'id' : pop.getId}) }}'">Ajouter</button>
+                                                            </li>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p>{{ bubbletea['drink'].getPrice }}€</p>
+                            </div>
+                        </div>
+                    <br><br>
+                    {% endfor %}
+                   <p> Total : {{ total }}€
+                        <button type="button" class="btn me-2 ml-5 btn-secondary" onclick="location.href='{{ path('app_drinks') }}'">Continuer ma Commande</button>
+                        <button type="button" class="btn me-2 btn-primary" onclick="location.href='{{ path('app_cart_validate') }}'">Valider</button>
+                   </p>
+                {% else %}
+                    <p>Panier vide</p>
+                    <button type="button" class="btn ms-auto btn-secondary mb-5 mt-4" onclick="location.href='{{ path('app_drinks') }}'">Commander</button>
+                {% endif %}
+            {% else %}
+                Connectez-vous
+            {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

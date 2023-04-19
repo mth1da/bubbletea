@@ -1,0 +1,34 @@
+/*login & sign up*/
+.container-form {
+    width: 50%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.logo-img{
+    height:100px;
+    width:auto;
+}
+
+.card{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
+
+.btn-cart{
+    float:right;
+}
+
+/*listes*/
+ul{
+    list-style-type: none;
+}
+
+.li-pop{
+    margin-bottom: 15px;
+}
