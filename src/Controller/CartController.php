@@ -17,6 +17,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class CartController extends AbstractController
 {
 
+    private TotalService $service;
+
     public function __construct(TotalService $service)
     {
         $this->service = $service;
@@ -35,7 +37,7 @@ class CartController extends AbstractController
     }
 
     #[Route('/cart/add/sugar/{key}', name: 'app_cart_add_sugar')]
-    public function addSugarQuantity(int $key, SessionInterface $session, PoppingRepository $poppingRepository): Response
+    public function addSugarQuantity(int $key, SessionInterface $session): Response
     {
         //on cherche la boisson grace au key de la session
         $bubbletea = $session->get('drinks')[$key]['drink'];
@@ -54,7 +56,7 @@ class CartController extends AbstractController
     }
 
     #[Route('/cart/discard/sugar/{key}', name: 'app_cart_discard_sugar')]
-    public function discardSugarQuantity(int $key, SessionInterface $session, PoppingRepository $poppingRepository): Response
+    public function discardSugarQuantity(int $key, SessionInterface $session): Response
     {
         //on cherche la boisson grace au key de la session
         $bubletea= $session->get('drinks')[$key]['drink'];
@@ -108,7 +110,7 @@ class CartController extends AbstractController
     }
 
     #[Route('/cart/discard/{key}/popping/{id}', name: 'app_cart_discard_popping')]
-    public function discardPopping(int $key, int $id, SessionInterface $session, PoppingRepository $poppingRepository): Response
+    public function discardPopping(int $key, int $id, SessionInterface $session): Response
     {
         //on récupère le panier
         $cart = $session->get('drinks');
@@ -163,14 +165,19 @@ class CartController extends AbstractController
             //on crée une nouvelle commande
             $order = new Order();
 
+            //pour chaque bubble tea de la commande
             foreach ($cart as $key => $bubbletea){
 
                 //on crée une nouvelle boisson
                 $drink = new Drink();
+
+                //on y associe les attributs de la session
                 $drink->setName($session->get('drinks')[$key]['drink']->getName());
                 $drink->setFlavour($session->get('drinks')[$key]['drink']->getFlavour());
                 $drink->setPrice($session->get('drinks')[$key]['drink']->getPrice());
                 $drink->setSugarQuantity($session->get('drinks')[$key]['drink']->getSugarQuantity());
+
+                //ces bubble tea ne sont ni sur la carte ni ne font partie de la carte
                 $drink->setIsOnMenu(False);
                 $drink->setIsPartOfMenu(False);
 
@@ -192,11 +199,12 @@ class CartController extends AbstractController
             $entityManager->persist($order);
             $entityManager->flush();
 
+            //on réinitialise la session
             $session->remove('drinks');
 
             $this->addFlash('success', 'Commande validée avec succès');
 
-        } catch (ORMException $e) {
+        } catch (ORMException) {
             $this->addFlash('danger', 'Un problème est survenu');
         }
 

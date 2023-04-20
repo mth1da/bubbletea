@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Repository\DrinkRepository;
 use PHPUnit\Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,31 +12,22 @@ use Symfony\Component\Routing\Annotation\Route;
 class DrinkController extends AbstractController
 {
     #[Route('/drinks', name: 'app_drinks')]
-    public function index(DrinkRepository $drinkRepository, Request $request): Response
+    public function index(DrinkRepository $drinkRepository): Response
     {
-        $session = $request->getSession();
         return $this->render('drinks/index.html.twig', [
             'drinks' => $drinkRepository->findBy(['is_on_menu' => true]),
         ]);
     }
-
-    /*
-    #[Route('/drinks/show/{id}', name: 'app_drinks_show')]
-    public function show(int $id, PoppingRepository $poppingRepository, DrinkRepository $drinkRepository, SessionInterface $session): Response
-    {
-        return $this->render('drinks/show.html.twig', [
-            'drink' => $drinkRepository->find($id),
-            'poppings' => $poppingRepository->findAll()
-        ]);
-    }*/
 
     #[Route('/drinks/add/{id}', name: 'app_drinks_add')]
     public function add(int $id, SessionInterface $session, DrinkRepository $drinkRepository): Response
     {
         $drink = $drinkRepository->find($id);
 
+        //on crée une session avec drinks (correspond au panier)
+        //consititué d'un array avec, pour chaque entrée,
+        //les boissons sous forme d'entity 'drink' et leurs poppings associés sous formes d'array 'poppings'
         try{
-            //on crée une session avec drinks
             if ($session->has('drinks')){
                 $cart = $session->get('drinks');
                 $cart[] = [
