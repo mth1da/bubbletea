@@ -4,9 +4,9 @@ namespace App\Controller;
 
 use App\Repository\DrinkRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use PHPUnit\Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class AdminController extends AbstractController
@@ -14,6 +14,8 @@ class AdminController extends AbstractController
     #[Route('/admin', name: 'app_admin')]
     public function index(DrinkRepository $drinkRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
         return $this->render('admin/index.html.twig', [
             'drinks' => $drinkRepository->findBy(['is_part_of_menu' => true]),
         ]);
@@ -22,13 +24,19 @@ class AdminController extends AbstractController
     #[Route('/admin/show/{id}', name: 'app_admin_show')]
     public function show(int $id, DrinkRepository $drinkRepository, EntityManagerInterface $entityManager): Response
     {
-        $drink = $drinkRepository->find($id);
-        $drink->setIsOnMenu(True);
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
-        $entityManager->persist($drink);
-        $entityManager->flush();
+        try{
+            $drink = $drinkRepository->find($id);
+            $drink->setIsOnMenu(True);
 
-        $this->addFlash('success', 'Boisson ajoutée à la carte avec succès');
+            $entityManager->persist($drink);
+            $entityManager->flush();
+
+            $this->addFlash('success', 'Boisson ajoutée à la carte avec succès');
+        } catch(Exception){
+            $this->addFlash('danger', 'Un problème est survenu');
+        }
 
         return $this->redirectToRoute('app_admin');
     }
@@ -36,13 +44,19 @@ class AdminController extends AbstractController
     #[Route('/admin/hide/{id}', name: 'app_admin_hide')]
     public function hide(int $id, DrinkRepository $drinkRepository, EntityManagerInterface $entityManager): Response
     {
-        $drink = $drinkRepository->find($id);
-        $drink->setIsOnMenu(False);
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
-        $entityManager->persist($drink);
-        $entityManager->flush();
+        try{
+            $drink = $drinkRepository->find($id);
+            $drink->setIsOnMenu(False);
 
-        $this->addFlash('success', 'Boisson retirée de la carte avec succès');
+            $entityManager->persist($drink);
+            $entityManager->flush();
+
+            $this->addFlash('success', 'Boisson retirée de la carte avec succès');
+        } catch(Exception){
+            $this->addFlash('danger', 'Un problème est survenu');
+        }
 
         return $this->redirectToRoute('app_admin');
     }
