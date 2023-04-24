@@ -8,7 +8,7 @@ Project coded with PHP, Twig and Bootstrap on Symfony 6.
 
 ## Class Diagram 
 
-![protocole](public/documents/bubbletea.png)
+![protocole](public/documents/diagram/bubbletea.png)
 
 ## Logins
 
